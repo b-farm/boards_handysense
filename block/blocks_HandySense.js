@@ -220,4 +220,18 @@ module.exports = function (Blockly) {
       this.setHelpUrl('');
     }
   };
+
+  
+  Blockly.Blocks["HandySense_brownout"] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField('Disable brown out');
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("#222222");
+      this.setTooltip('');
+      this.setHelpUrl('');
+    }
+  };
 };

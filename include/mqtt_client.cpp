@@ -11,7 +11,7 @@ const char *nest_mqtt_password = "1234";
 const char *nest_topic = "nnt";
 
 uint32_t previousMillisMQTT = 0;     // Timestamp of the last message
-const uint32_t intervalMQTT = 60000; // 1 minute interval
+const uint32_t intervalMQTT = 3600000; // 60000 : 1 minute interval
 
 void connectToMQTT()
 {
@@ -20,11 +20,11 @@ void connectToMQTT()
         // Serial.print("Connecting to MQTT...");
         if (nntclient.connect("ESP32Client", nest_mqtt_user, nest_mqtt_password))
         {
-            Serial.println("nnt cn");
+            Serial.println("Datasharing connect");
         }
         else
         {
-            Serial.println("nnt!?");
+            Serial.println("Datasharing disconnect");
             // Serial.print("server ");
             // Serial.print(nest_mqtt_server);
             // Serial.print(" Failed with error code: ");
@@ -55,35 +55,35 @@ void publishMessage(const char *message)
 
     if (!nntclient.connected())
     {
-        Serial.println("nnt!?");
+        Serial.println("Datasharing disconnect");
         connectToMQTT();
         if (nntclient.connected())
         {
-            Serial.print("nnt: ");
+            Serial.print("Datasharing : ");
             Serial.println(message);
             if (nntclient.publish(nest_topic, message))
             {
-                Serial.println("nnt ok");
+                Serial.println("Datasharing sent");
                 // previousMillisMQTT = currentMillis; // Update the last message timestamp
             }
             else
             {
-                Serial.println("nnt ng");
+                Serial.println("Datasharing don't sent");
             }
         }
     }
     else
     {
-        Serial.print("nnt: ");
+        Serial.print("Datasharing : ");
         Serial.println(message);
         if (nntclient.publish(nest_topic, message))
         {
-            Serial.println("nnt ok");
+            Serial.println("Datasharing sent");
             // previousMillisMQTT = currentMillis; // Update the last message timestamp
         }
         else
         {
-            Serial.println("nnt ng");
+            Serial.println("Datasharing don't sent");
         }
     }
 }

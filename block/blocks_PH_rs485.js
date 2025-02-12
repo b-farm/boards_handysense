@@ -4,7 +4,9 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['rs485_PH_begin'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField("pH begin  —  RS485");
+				.appendField("pH begin  —  RS485")
+				.appendField("id : ")
+				.appendField(new Blockly.FieldTextInput("1"), "id");
 			this.setPreviousStatement(true, null);
 			this.setNextStatement(true, null);
 			this.setColour("#663300");

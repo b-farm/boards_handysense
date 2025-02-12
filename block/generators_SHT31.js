@@ -70,15 +70,15 @@ module.exports = function (Blockly) {
 
 
 	Blockly.JavaScript['sht31_begin_rs'] = function (block) {
-		var code = '';
-		code += '#EXTINC#include <ModbusMaster.h>#END\n';
-		code += '#VARIABLE ModbusMaster rs485_sht31Meter;#END\n';
-		code += '\n';
-		code += '#SETUP Wire.begin();#END\n';
-		code += '#SETUP Serial2.begin(9600);#END\n';
-		code += '#SETUP rs485_sht31Meter.begin(1, Serial2);#END\n';
-		code += '#LOOP_EXT_CODE uint8_t result_temp;#END\n';
-		code += '#LOOP_EXT_CODE rs485_sht31Meter.readHoldingRegisters(0, 2);#END\n';
+		var id = block.getFieldValue("id");
+		var code = `#EXTINC#include <ModbusMaster.h>#END\n
+					#VARIABLE ModbusMaster rs485_sht31Meter;#END\n
+					\n
+					#SETUP Wire.begin();#END\n
+					#SETUP Serial2.begin(9600);#END\n
+					#SETUP rs485_sht31Meter.begin(${id}, Serial2);#END\n
+					#LOOP_EXT_CODE uint8_t result_temp;#END\n
+					#LOOP_EXT_CODE rs485_sht31Meter.readHoldingRegisters(0, 2);#END\n`;
 		return code;
 	};
 	

@@ -77,7 +77,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['sht31_read_init_i2c'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField("SHT31 init  —  I2C");
+				.appendField("SHT31 read  —  I2C");
 			this.setPreviousStatement(true, null);
 			this.setNextStatement(true, null);
 			this.setColour("#996633");
@@ -112,7 +112,9 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['sht31_begin_rs'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField("SHT31 begin  —  RS485");
+				.appendField("SHT31 begin  —  RS485")
+				.appendField("id : ")
+				.appendField(new Blockly.FieldTextInput("1"), "id");
 			this.setPreviousStatement(true, null);
 			this.setNextStatement(true, null);
 			this.setColour("#663300");

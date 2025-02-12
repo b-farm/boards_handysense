@@ -1,10 +1,13 @@
+/* eslint-disable prettier/prettier */
 module.exports = function (Blockly) {
 	"use strict";
 
 	Blockly.Blocks['winddirec3_begin_rs485'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField("Wind-Direc begin  —  RS485");
+				.appendField("Wind-Direc begin  —  RS485")
+				.appendField("id : ")
+				.appendField(new Blockly.FieldTextInput("3"), "id");
 			this.setPreviousStatement(true, null);
 			this.setNextStatement(true, null);
 			this.setColour("#663300");

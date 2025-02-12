@@ -105,4 +105,10 @@ module.exports = function (Blockly) {
 
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
+
+  
+  Blockly.JavaScript['HandySense_brownout'] = function (block) {
+    var code = `#SETUP WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);#END`;
+    return code;
+  };
 };

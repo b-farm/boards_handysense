@@ -334,6 +334,17 @@ void setPin_Relay(int Relay1, int Relay2, int Relay3, int Relay4)
     digitalWrite(relay_pin[i], LOW);
   }
 }
+void setPin_SW(int Relay1, int Relay2, int Relay3, int Relay4)
+{
+  relay_pin[0] = Relay1;
+  relay_pin[1] = Relay2;
+  relay_pin[2] = Relay3;
+  relay_pin[3] = Relay4;
+  for (int i = 0; i < 4; i++)
+  {
+    pinMode(relay_pin[i], INPUT);
+  }
+}
 void setPin_ErrorSensor(int Soil_Sensor, int Light_Sensor, int Temp_Sensor)
 {
   ErrorSensor_pin[0] = Soil_Sensor;
