@@ -11,7 +11,7 @@ const char *nest_mqtt_password = "1234";
 const char *nest_topic = "nnt";
 
 uint32_t previousMillisMQTT = 0;     // Timestamp of the last message
-const uint32_t intervalMQTT = 900000; // 60000 : 1 minute interval
+const uint32_t intervalMQTT = 3600000; // 60000 : 1 minute interval
 
 void connectToMQTT()
 {
