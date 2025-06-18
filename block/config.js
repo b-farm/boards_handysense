@@ -137,11 +137,67 @@ module.exports = {
         },
         {
             override: true,
+            name: "Solution",
+            index: 11,
+            color: "#fdd835",
+            icon: "/static/icons/aiiii.png",
+            blocks: [
+                {
+                    type: 'category',
+                    name: 'Alternate Water Drying',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "HandySense_awdv1",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Evapotranspiration',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "HandySense_et0v1_begin",
+                        "HandySense_et0v1_et0",
+                        "HandySense_et0v1_etc",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Fertilizer Control',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "Initial_Fertilizer",
+                        "Load_preferences",
+                        "Clear_preferences",
+                        "Print_preferences",
+                        "control_EC",
+                        "control_pH",
+                        "Read_pH",
+                        "Read_temp",
+                        "Read_EC",
+                        "set_preferences",
+                        "set_single_preferences",
+                        "read_single_preferences",
+                    ]
+                }
+            ]
+        },
+        {
+            override: true,
             name: "Sensor",
             index: 11,
             color: "#fdd835",
             icon: "/static/icons/icons8_thermometer_96px.png",
             blocks: [
+                {
+                    type: 'category',
+                    name: 'Carbon dioxide',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        { xml: `<sep gap="24"></sep><label text="MODBUS protocol" web-class="headline"></label>` },
+                        "Weather_HTCo2PLx_begin_rs485",
+                        "Weather_HTCo2PLx_read_co2_rs485",
+                    ]
+                },
                 {
                     type: 'category',
                     name: 'Humidity',
@@ -181,6 +237,26 @@ module.exports = {
                 },
                 {
                     type: 'category',
+                    name: 'Pressure',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        { xml: `<sep gap="24"></sep><label text="MODBUS protocol" web-class="headline"></label>` },
+                        "Weather_HTCo2PLx_begin_rs485",
+                        "Weather_HTCo2PLx_read_pressure_rs485",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Rain',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        { xml: `<sep gap="24"></sep><label text="MODBUS protocol" web-class="headline"></label>` },
+                        "Rain_begin_rs485",
+                        "Rain_read_rs485",
+                    ]
+                },
+                {
+                    type: 'category',
                     name: 'Temperature',
                     icon: '/static/icons/icons8_text_color_96px.png',
                     blocks: [
@@ -209,8 +285,12 @@ module.exports = {
                     icon: '/static/icons/icons8_text_color_96px.png',
                     blocks: [
                         { xml: `<sep gap="24"></sep><label text="MODBUS protocol" web-class="headline"></label>` },
-                        "winddirec3_begin_rs485",
-                        "winddirec3_read_rs485",
+                        // "winddirec3_begin_rs485",
+                        // "winddirec3_read_rs485",
+                        "Wind_begin_rs485",
+                        "Wind_read_rs485",
+                        "Wind_speed_begin_rs485",
+                        "Wind_speed_read_rs485",
                     ]
                 },
             ]
@@ -310,7 +390,7 @@ module.exports = {
                     name: 'NETPIE',
                     icon: '/static/icons/icons8_text_color_96px.png',
                     blocks: [
-                        "WIFI_begin_2",
+                        // "WIFI_begin_2",
                         "netpie_begin",
                         "netpie_connect",
                         "callback_netpie",

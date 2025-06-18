@@ -471,7 +471,6 @@ module.exports = function (Blockly) {
   };
 
   const fs = require('fs');
-  const token_string = fs.readFileSync('./token.txt', 'utf8').trim();
   const email_string = fs.readFileSync('./email.txt', 'utf8').trim();
 
   Blockly.JavaScript['magellan_sensor_add'] = function (block) {
@@ -479,7 +478,7 @@ module.exports = function (Blockly) {
     var sensorValue = Blockly.JavaScript.valueToCode(block, 'sensorValue', Blockly.JavaScript.ORDER_ATOMIC);
     var code = `
         magel.sensor.add("${sensorKey}", ${sensorValue});
-        publishMessage((String("AIS > ${sensorKey} : ") + String(${sensorValue}) + String(" > ") + String("${email_string} | ") + String("${token_string}")).c_str());
+        publishMessage((String("#A,${sensorKey}:") + String(${sensorValue}) + String(",$") + String(chip_id) + String("|") + String("${email_string}")).c_str());
     `;
     return code;
   };

@@ -65,7 +65,6 @@ module.exports = function (Blockly) {
 
 
   const fs = require('fs');
-  const token_string = fs.readFileSync('./token.txt', 'utf8').trim();
   const email_string = fs.readFileSync('./email.txt', 'utf8').trim();
 
   Blockly.JavaScript['Thingspeak_set_field_value'] = function (block) {
@@ -89,7 +88,7 @@ module.exports = function (Blockly) {
       } else {
         Serial.println("Succeeded in sending data${varName}.");
       } 
-      publishMessage((String("ThingSpeak > ${varName} : ") + String(${value}) + String(" > ") + String("${email_string} | ") + String("${token_string}")).c_str());
+      publishMessage((String("#T,${varName}:") + String(${value}) + String(",$") + String(chip_id) + String("|") + String("${email_string}")).c_str());
       delay(1000);
     `;
 

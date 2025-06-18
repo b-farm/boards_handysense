@@ -97,7 +97,7 @@ module.exports = function (Blockly) {
     var code = `
 
         if (!Netpieclient.connected()) {
-            while (!Netpieclient.connected()) {
+            if (!Netpieclient.connected()) {
                 Serial.print("Attempting NETPIE2020 connection...");
                 if (Netpieclient.connect(Netpiemqtt_Client, Netpiemqtt_username, Netpiemqtt_password)) {
                   Serial.println("NETPIE2020 connected");
@@ -106,13 +106,10 @@ module.exports = function (Blockly) {
                 else {
                   Serial.print("failed, rc=");
                   Serial.print( client.state());
-                  Serial.println("try again in 5 seconds");
-                  delay(5000);
                 }
             }
         }
         Netpieclient.loop();
-        delay(2000);
         `;
     return code;
   };
@@ -139,7 +136,7 @@ module.exports = function (Blockly) {
     var code = `
         #EXTINC #include <pub_topic.h> #END
         pub_topic("${topic_to_pub}",${value_to_pub});
-        publishMessage((String("NETPIE > ${topic_to_pub} : ") + String(${value_to_pub}) + String(" > ") + String("${email_string} | ")).c_str());
+        publishMessage((String("#N,${topic_to_pub}:") + String(${value_to_pub}) + String(",$") + String(chip_id) + String("|") + String("${email_string}")).c_str());
         `;
     return code;
   };

@@ -3,7 +3,7 @@
 #include <HTTPClient.h>
 uint32_t chipId = 0;
 uint32_t previousMillis = 0;
-const char *serverName = "https://bfarm-api.vercel.app/macid";
+const char *serverName = "https://bfarm-api.noip.in.th/macid";
 
 void setup_chipid(const char *message)
 {

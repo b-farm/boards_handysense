@@ -4,14 +4,14 @@
 // WiFiClient espClient;
 PubSubClient nntclient(espClient);
 
-const char *nest_mqtt_server = "192.168.119.27";
+const char *nest_mqtt_server = "mqtt.aiforthai.in.th";
 const int nest_mqtt_port = 1883;
-const char *nest_mqtt_user = "naste_mqtt";
-const char *nest_mqtt_password = "1234";
-const char *nest_topic = "nnt";
+const char *nest_mqtt_user = "bfarm";
+const char *nest_mqtt_password = "b1f2r3m4";
+const char *nest_topic = "bfarm-datasharing";
 
-uint32_t previousMillisMQTT = 0;     // Timestamp of the last message
-const uint32_t intervalMQTT = 3600000; // 60000 : 1 minute interval
+// uint32_t previousMillisMQTT = 0;     // Timestamp of the last message
+// const uint32_t intervalMQTT = 30000; // 60000 : 1 minute interval
 
 void connectToMQTT()
 {
@@ -42,16 +42,16 @@ void setupMQTT()
 
 void publishMessage(const char *message)
 {
-    uint32_t currentMillis = millis(); // Get current time
-    if (currentMillis - previousMillisMQTT < intervalMQTT)
-    {
-        // Serial.println("Publish skipped: Less than 1 minute since last message.");
-        return; // Skip publishing
-    }
-    else
-    {
-        previousMillisMQTT = currentMillis; // Update the last message timestamp
-    }
+    // uint32_t currentMillis = millis(); // Get current time
+    // if (currentMillis - previousMillisMQTT < intervalMQTT)
+    // {
+    //     // Serial.println("Publish skipped: Less than 1 minute since last message.");
+    //     return; // Skip publishing
+    // }
+    // else
+    // {
+    //     previousMillisMQTT = currentMillis; // Update the last message timestamp
+    // }
 
     if (!nntclient.connected())
     {
@@ -96,3 +96,10 @@ void handleMQTT()
     }
     // nntclient.loop();
 }
+
+
+// const char *nest_mqtt_server = "192.168.119.27";
+// const int nest_mqtt_port = 1883;
+// const char *nest_mqtt_user = "naste_mqtt";
+// const char *nest_mqtt_password = "1234";
+// const char *nest_topic = "nnt";
