@@ -140,7 +140,7 @@ module.exports = {
             name: "Solution",
             index: 11,
             color: "#fdd835",
-            icon: "/static/icons/aiiii.png",
+            icon: "/static/icons/solutionnnn.png",
             blocks: [
                 {
                     type: 'category',
@@ -438,6 +438,228 @@ module.exports = {
                         "Thingspeak_set_field_value",
                     ]
                 },
+            ]
+        },
+        {
+            override: true,
+            name: "Plugins Official",
+            index: 65,
+            color: "#fdd835",
+            icon: "/static/icons/nnn-control.png",
+            blocks: [
+                {
+                    type: 'category',
+                    name: '7in1 Soil Sensor',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "7in1soilMuti_rs485_begin",
+                        "7in1soilMuti_rs485_mois_read",
+                        "7in1soilMuti_rs485_temps_read",
+                        "7in1soilMuti_rs485_ec_read",
+                        "7in1soilMuti_rs485_PH_read",
+                        "7in1soilMuti_rs485_N_read",
+                        "7in1soilMuti_rs485_P_read",
+                        "7in1soilMuti_rs485_K_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Air Velocity SM3789',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "AirVelocity_SM3789_begin",
+                        "AirVelocity_SM3789_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'ANS RS485',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "rs485_ANS_begin",
+                        "rs485_ANS_ammonia_read",
+                        "rs485_ANS_pH_read",
+                        "rs485_ANS_temp_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Lux120k RS485',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "rs485_lux120k_begin",
+                        "rs485_lux120k_read",
+                    ]
+                },
+                // {
+                //     type: 'category',
+                //     name: 'SEN55',
+                //     icon: '/static/icons/icons8_text_color_96px.png',
+                //     blocks: [
+                //         "I2C_SEN55_begin",
+                //         "I2C_SEN55_read",
+                //         "I2C_SEN55_pm1p0_read",
+                //         "I2C_SEN55_pm2p5_read",
+                //         "I2C_SEN55_pm4p0_read",
+                //         "I2C_SEN55_pm10p0_read",
+                //         "I2C_SEN55_temp_read",
+                //         "I2C_SEN55_humid_read",
+                //         "I2C_SEN55_voc_read",
+                //         "I2C_SEN55_nox_read",
+                //     ]
+                // }
+                {
+                    type: 'category',
+                    name: 'Soil Temperature RS485',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "rs485_soiltMuti_begin",
+                        "rs485_soiltMuti_soilmoistRead",
+                        "rs485_soiltMuti_soiltempRead",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'TMEC Sensor',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "ReadAnalog_Tensiometer",
+                        "ReadAnalog_Pressure",
+                        "ReadAnalog_Diff_Pressure",
+                        "ReadAnalog_Water_Level_Pressure",
+                        "ReadAnalog_Light",
+                        "ReadAnalog_RTDandHeater",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Nitrate-ISFET',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "nitrate_isfet_rs485_begin",
+                        "nitrate_isfet_rs485_readholding",
+                        "nitrate_isfet_rs485_vout_read",
+                        "nitrate_isfet_rs485_vout_temp_read",
+                        "nitrate_isfet_rs485_sample_value_read",
+                        "nitrate_isfet_rs485_temperature_read",
+                        "nitrate_isfet_rs485_error_read",
+                        "nitrate_isfet_rs485_r_quare_read",
+                        "nitrate_isfet_rs485_sensitivity_read",
+                        "nitrate_isfet_rs485_STD1_50ppm_read",
+                        "nitrate_isfet_rs485_STD2_100ppm_read",
+                        "nitrate_isfet_rs485_STD3_300ppm_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Tensio-RS485',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "TMEC_Tensio_Rs485_begin",
+                        "TMEC_Tensio_Rs485_riR",
+                        "TMEC_Tensio_Rs485_temp_read",
+                        "TMEC_Tensio_Rs485_humid_read",
+                        "TMEC_Tensio_Rs485_light_read",
+                        "TMEC_Tensio_Rs485_volt_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Tubular Soil Sensor',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "TubularSoil_begin",
+                        "TubularSoilMois_10cm_read",
+                        "TubularSoilTemp_10cm_read",
+                        "TubularSoilMois_20cm_read",
+                        "TubularSoilTemp_20cm_read",
+                        "TubularSoilMois_30cm_read",
+                        "TubularSoilTemp_30cm_read",
+                        "TubularSoilMois_40cm_read",
+                        "TubularSoilTemp_40cm_read",
+                        "TubularSoilMois_50cm_read",
+                        "TubularSoilTemp_50cm_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Turbidity XM3318B',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "Turbidity_XM3318B_begin",
+                        "Turbidity_XM8518B_readHoldingRegisters",
+                        "Turbidity_XM3318B_read",
+                    ]
+                },
+                // {
+                //     type: 'category',
+                //     name: 'Turbidity XM8518',
+                //     icon: '/static/icons/icons8_text_color_96px.png',
+                //     blocks: [
+                //         "Turbidity_XM8518_begin",
+                //         "Turbidity_XM8518_readHoldingRegisters",
+                //         "Turbidity_XM8518_read",
+                //     ]
+                // }
+                {
+                    type: 'category',
+                    name: 'Ultrasonic RS485',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "rs485_Ultrasonic_begin",
+                        "rs485_Ultrasonic_readholdingregisters",
+                        "rs485_Ultrasonic_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Water Quality Sensor',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "WQ_rs485_Water_Level_begin",
+                        "WQ_rs485_Water_Level_readholding",
+                        "WQ_rs485_Water_Level_read",
+                        "WQ_rs485_Water_temp_read",
+                        "WQ_rs485_pH_begin",
+                        "WQ_rs485_pH_readholding",
+                        "WQ_rs485_pH_read",
+                        "WQ_rs485_DO_begin",
+                        "WQ_rs485_DO_readholding",
+                        "WQ_rs485_DO_read",
+                        "WQ_rs485_DO_temp_read",
+                        "WQ_rs485_EC_begin",
+                        "WQ_rs485_EC_readholding",
+                        "WQ_rs485_EC_read",
+                        "rs485_ANS_begin",
+                        "rs485_ANS_readholding",
+                        "rs485_ANS_ammonia_read",
+                        "rs485_ANS_pH_read",
+                        "rs485_ANS_temp_read",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Weather Sensor',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "WTs_rs485_begin",
+                        "WTs_rs485_readholding",
+                        "WTs_rs485_humidity",
+                        "WTs_rs485_temperature",
+                        "WTs_rs485_noise",
+                        "WTs_rs485_co2",
+                        "WTs_rs485_pressure",
+                        "WTs_rs485_lux",
+                    ]
+                },
+                {
+                    type: 'category',
+                    name: 'Wifi Manager',
+                    icon: '/static/icons/icons8_text_color_96px.png',
+                    blocks: [
+                        "WiFi_Manager_begin",
+                    ]
+                }
             ]
         },
     ],
